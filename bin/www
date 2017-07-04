@@ -8,6 +8,10 @@ var app = require('../app');
 var debug = require('debug')('expressapp:server');
 var http = require('http');
 
+const appInsights = require("applicationinsights");
+appInsights.setup(process.env.insights_key);
+appInsights.start();
+
 /**
  * Get port from environment and store in Express.
  */
